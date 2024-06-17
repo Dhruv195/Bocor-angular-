@@ -1,0 +1,37 @@
+<section id="hero">
+  <ngb-carousel>
+    <ng-container *ngFor="let data of homeInfo">
+      <ng-template ngbSlide>
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 py-5 py-lg-0 order-2 order-lg-1">
+              <h1>{{ data.heading }}</h1>
+              <h2>{{ data.headingDecryption }}</h2>
+              <a href="#about" class="btn-get-started scrollto">{{
+                data.buttonLabel
+              }}</a>
+            </div>
+            <div
+              class="col-lg-6 order-1 order-lg-2 hero-media"
+              data-aos="fade-left"
+            >
+              <div class="media-container">
+                <img
+                  *ngIf="data.imageURL"
+                  src="{{ data.imageURL }}"
+                  class="img-fluid media-element"
+                  alt=""
+                />
+        
+                <video *ngIf="data.videoURL"  class="media-element"  controls (click)="videoPlay(video,$event)" #video>
+                  <source src="{{data.videoURL}}"  type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </ngb-carousel>
+</section>

@@ -1,0 +1,47 @@
+<section id="about" class="about section-bg">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="image col-xl-5"></div>
+      <div class="col-xl-7">
+        <div
+          class="content d-flex flex-column justify-content-center ps-0 ps-xl-4"
+        >
+          <h3 data-aos="fade-in" data-aos-delay="100">
+            {{ aboutInfo?.heading }}
+          </h3>
+          <p data-aos="fade-in">
+            {{
+              isDescriptionShort
+                ? aboutInfo?.description
+                : (aboutInfo?.headingDecryption | slice : 0 : 100) + "..."
+            }}
+          </p>
+          <a
+            *ngIf="!isDescriptionShort"
+            class="text-warning"
+            (click)="viewMore()"
+            >View More</a
+          >
+          <div class="row gy-4 mt-3">
+            <ng-container *ngFor="let item of aboutInfo.characteristics">
+              <div class="col-md-6 icon-box" data-aos="fade-up">
+                <i [ngClass]="item.icon"></i>
+                <h4>
+                  <a href="#">{{ item.heading }}</a>
+                </h4>
+                <p>{{ item.headingDecryption }}</p>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <!-- End .content-->
+      </div>
+    </div>
+  </div>
+  <app-pop-up
+    *ngIf="showPopup"
+    [header]="aboutInfo?.heading"
+    [description]="aboutInfo?.headingDecryption"
+    (close)="showPopup = false"
+  ></app-pop-up>
+</section>

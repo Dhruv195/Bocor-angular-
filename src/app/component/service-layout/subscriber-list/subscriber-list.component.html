@@ -1,0 +1,35 @@
+<div class="container-fluid h-75 pt-5 mb-5">
+    <div class="row text-center bg-light">
+      <h2>Subscriber List</h2>
+    </div>
+    <table class="container-fluid table-bordered table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>email</th>
+          <th>TimeStamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="subscriberList; else noData">
+          <ng-container *ngFor="let data of subscriberList; let i = index">
+            <tr>
+              <td>{{i+1}}</td>
+              <td>{{ data.email}}</td>
+              <td>{{ data.timeStamp|date:"full" }}</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+        <ng-template #noData>
+          <tr>
+            <td colspan="9" class="text-center">No Data Found..</td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </table>
+   <div class="row text-center pt-5">
+      <div class="col-12">
+        <button class="btn btn-outline-warning" routerLink="/home">Go Back</button>
+      </div>
+    </div>
+  </div>

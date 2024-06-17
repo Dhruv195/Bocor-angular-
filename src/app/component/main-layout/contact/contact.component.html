@@ -1,0 +1,161 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>{{contactInfo.heading}}</h2>
+      <p>{{contactInfo.headingDecryption}}</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="row" >
+            
+          <div class="col-md-12">
+              <ng-container *ngFor="let item of contactInfo.address">
+            <div class="info-box" data-aos="fade-up">
+              <i class="bx bx-map"></i>
+              <h3>{{item.label}}</h3>
+              <ng-container *ngFor="let data of item.label_details">
+              <p>{{data}}</p>
+          </ng-container>
+            </div>
+          </ng-container>
+          </div>
+
+          <div class="col-md-6">
+              <ng-container  *ngFor="let item of contactInfo?.email">
+            <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-envelope"></i>
+              <h3>{{item.label}}</h3>
+              <ng-container *ngFor="let data of item.label_details">
+              <p>{{data}}</p>
+          </ng-container>
+            </div>
+          </ng-container>
+          </div>
+          <div class="col-md-6">
+              <ng-container *ngFor="let item of contactInfo?.phone">
+            <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-phone-call"></i>
+              <h3>{{item.label}}</h3>
+             <ng-container *ngFor="let data of item.label_details">
+              <p>{{data}}</p>
+          </ng-container>
+            </div>
+          </ng-container>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 mt-4 mt-lg-0">
+
+        <ng-container *ngIf="showForm">
+
+        <form #contact="ngForm"  [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="php-email-form w-100" data-aos="fade-up">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" placeholder="Enter name" formControlName="name"
+                [ngClass]="{
+                      'is-invalid':
+                        (contactForm.get('name')?.touched &&
+                          contactForm.get('name')?.hasError('required')) ||
+                        (submitted &&
+                        contactForm.get('name')?.errors)
+                    }" />
+              <span class="text-danger" *ngIf="
+                      (contactForm.get('name')?.touched || submitted) &&
+                      contactForm.get('name')?.errors
+                    ">Name is required</span>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" name="email" id="email" class="form-control" formControlName="email" [ngClass]="{
+                      'is-invalid':
+                        (contactForm.get('email')?.touched &&
+                          contactForm.get('email')?.hasError('required')) ||
+                        (submitted && contactForm.get('email')?.errors)
+                    }" placeholder="Enter Email" />
+              <span class="text-danger" *ngIf="
+                  (contactForm.get('email')?.touched || submitted) &&
+                  contactForm.get('email')?.hasError('required')
+                ">Email is required</span>
+              <span class="text-danger" *ngIf="
+                  (contactForm.get('email')?.touched || submitted) &&
+                  contactForm.get('email')?.hasError('email')
+                ">Email is not valid</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <div class="form-group mt-3">
+                <input type="text" name="subject" class="form-control" placeholder="Enter subject" formControlName="subject"
+                [ngClass]="{
+                      'is-invalid':
+                        (contactForm.get('subject')?.touched &&
+                          contactForm.get('subject')?.hasError('required')) ||
+                        (submitted &&
+                        contactForm.get('subject')?.errors)
+                    }" />
+              <span class="text-danger" *ngIf="
+                      (contactForm.get('subject')?.touched || submitted) &&
+                      contactForm.get('subject')?.errors
+                    ">subject is required</span>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <div class="form-group mt-3">
+                <select class="form-select" name="gender" formControlName="gender" [ngClass]="{
+                  'is-invalid':
+                    (contactForm.get('gender')?.touched  && contactForm.get('gender')?.errors) ||
+                    (submitted && contactForm.get('gender')?.errors)
+                }">
+                  <option value="" disabled hidden>select a Gender</option>
+                  <option value="Male" >Male</option>
+                  <option value="Female" selected>Female</option>
+                </select>
+              <span class="text-danger" *ngIf="
+                  (contactForm.get('gender')?.touched || submitted) &&
+                  contactForm.get('gender')?.hasError('required')
+                ">Gender is required</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required formControlName="message" 
+            [ngClass]="{
+              'is-invalid':
+                (contactForm.get('message')?.touched  && contactForm.get('message')?.errors) ||
+                (submitted && contactForm.get('message')?.errors)
+            }"
+            ></textarea>
+            <span class="text-danger" *ngIf="
+            (contactForm.get('message')?.touched || submitted) &&
+            contactForm.get('message')?.hasError('required')
+          ">Message is required</span>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </ng-container>
+      <ng-container *ngIf="!showForm">
+        <h4>Name:{{contactForm.value.name}}</h4>
+        <h4>Email:{{contactForm.value.email}}</h4>
+        <h4>Subject:{{contactForm.value.subject}}</h4>
+        <h4>Gender:{{contactForm.value.gender}}</h4>
+        <h4>Message:{{contactForm.value.message}}</h4>
+        <ngb-alert type="success">Store details successfully!</ngb-alert>
+        <button class="btn btn-outline-warning w-100" (click)="reset()">Go back</button>
+      </ng-container>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->

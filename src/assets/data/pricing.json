@@ -1,0 +1,90 @@
+{
+  "heading": "PRICING",
+  "headingDescription": "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+  "details": [
+    {
+      "type": "Free",
+      "amount": "$0",
+      "duration": "per month",
+      "details1": [
+        {
+          "para": "Quam adipiscing vitae proin",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Nec feugiat nisl pretium",
+          "class": "bx bx-check"
+        },
+        {
+          "para": "Nulla at volutpat diam uteera",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Pharetra massa massa ultricies",
+          "class": "bx bx-x"
+        },
+        {
+          "para": "Massa ultricies mi quis hendrerit",
+          "class": "bx bx-x"
+        }
+      ],
+      "btn": "Get Started"
+    },
+    {
+      "type": "Business",
+      "amount": "$29",
+      "duration": "per month",
+      "details1": [
+        {
+          "para": "Quam adipiscing vitae proin",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Nec feugiat nisl pretium",
+          "class": "bx bx-check"
+        },
+        {
+          "para": "Nulla at volutpat diam uteera",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Pharetra massa massa ultricies",
+          "class": "bx bx-check"
+        },
+        {
+          "para": "Massa ultricies mi quis hendrerit",
+          "class": "bx bx-check"
+        }
+      ],
+      "btn": "Get Started"
+    },
+    {
+      "type": "Developer",
+      "amount": "$49",
+      "duration": "per month",
+      "details1": [
+        {
+          "para": "Quam adipiscing vitae proin",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Nec feugiat nisl pretium",
+          "class": "bx bx-check"
+        },
+        {
+          "para": "Nulla at volutpat diam uteera",
+          "class": "bx bx-check"
+        },
+        {
+          "para": " Pharetra massa massa ultricies",
+          "class": "bx bx-check"
+        },
+        {
+          "para": "Massa ultricies mi quis hendrerit",
+          "class": "bx bx-check"
+        }
+      ],
+      "btn": "Get Started"
+    }
+  ]
+}

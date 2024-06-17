@@ -1,0 +1,21 @@
+{
+  "menu_item": [
+    { "label": "Home", "path": "#home" },
+    { "label": "About Us", "path": "#about" },
+    { "label": "Service", "path": "#service" },
+    { "label": "Portfolio", "path": "#portfolio" },
+    { "label": "Team", "path": "#team" },
+    { "label": "Contact", "path": "#contact" }
+  ],
+  "drop_down": [
+    {
+      "label": "subscribe",
+      "path": "#contact-info",
+      "children": [
+        { "label": "Subscriber-list", "path": "/subscriber-list" },
+        { "label": "Contact-list", "path": "/contact-list", "children": [] }
+      ]
+    }
+  ],
+  "start": { "label": "Get Started", "path": "#started" }
+}

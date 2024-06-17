@@ -1,0 +1,66 @@
+
+<section class="records-section" *ngIf="contactId">
+  <div class="container">
+    <h4 class="text-center">Records</h4>
+    <table class="table table-bordered mb-4 mt-4 shadow-lg ">
+      <thead class="thead-light">
+        <tr>
+          <th colspan="5">Contact Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name:{{contact.name}}</td>
+          <td>Email:{{contact.email}}</td>
+          <td>Subject:{{contact.subject}}</td>
+          <td>Gender:{{contact.gender}}</td>
+          <td>Message:{{contact.message}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="container-fluid h-75 pt-5 mb-5">
+  <div class="row text-center bg-light">
+    <h2>Contact List</h2>
+  </div>
+  <table class="container-fluid table-bordered table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Gender</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="contactList; else noData">
+        <ng-container *ngFor="let data of contactList; let i = index">
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.subject }}</td>
+            <td>{{ data.gender }}</td>
+            <td>{{ data.message }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      <ng-template #noData>
+        <tr>
+          <td colspan="9" class="text-center">No Data Found..</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+  <div class="row text-center pt-5">
+    <div class="col-12">
+      <button class="btn btn-outline-warning" routerLink="/home">
+        Go Back
+      </button>
+    </div>
+  </div>
+</div>
+

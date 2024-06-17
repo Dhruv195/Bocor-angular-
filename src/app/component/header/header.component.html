@@ -1,0 +1,45 @@
+<header id="header">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo">
+      <h1>
+        <a>Bocor<span>.</span></a>
+      </h1>
+    </div>
+
+    <nav id="navbar" class="navbar" [ngClass]="show?'navbar-mobile':''">
+      <ul>
+        <li *ngFor="let item of headerInfo?.menu_item">
+          <a routerLink="/home" (click)="scrollTo(item.path, $event)"
+            [class.active]="isActive(item.path.substring(1))">{{
+            item.label }}</a>
+        </li>
+        <li *ngFor="let item of headerInfo?.drop_down" class="dropdown">
+          <a routerLink="/home" (click)="scrollTo(item.path, $event)"
+            [class.active]="isActive(item.path.substring(1))">{{
+            item.label }}</a>
+          <ul *ngIf="item.children" class="dropdown-content">
+            <ng-container *ngFor="let subItem of item.children">
+              <li *ngIf="subItem.label == 'Subscriber-list'">
+                <a routerLink="/home" [routerLink]="subItem.path" (click)="scrollTo(subItem.path, $event)"
+                  [class.active]="isActive(subItem.path.substring(1))">{{ subItem.label }}</a>
+              </li>
+              <li class="dropdown" *ngIf="subItem.label == 'Contact-list'">
+                <a routerLink="/contact-list">{{ subItem.label }} <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li *ngFor="let contact of userContactList">
+                    <a routerLink="/contact-list/{{ contact.id }}">Hello {{ contact.name }}</a>
+                  </li>
+                </ul>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/home" class="getstarted scrollto" (click)="scrollTo(headerInfo?.start.path, $event)"
+            [class.active]="isActive(headerInfo?.start.path.substring(1))">{{ headerInfo?.start.label }}</a>
+        </li>
+      </ul>
+      <i class="bi mobile-nav-toggle" (click)="show=!show" [ngClass]="show?'bi-x':'bi-list'"></i>
+    </nav>
+  </div>
+</header>

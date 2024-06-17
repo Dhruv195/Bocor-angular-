@@ -1,0 +1,51 @@
+<!-- ======= Features Section ======= -->
+<section id="features" class="features section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-aos="fade-in">{{featuresInfo?.heading}}</h2>
+      <p data-aos="fade-in">
+        {{featuresInfo?.headingDecryption}}
+      </p>
+    </div>
+
+    <ng-container *ngFor="let item of featuresInfo?.featuresList;let i=index;let odd=odd,let even=even">
+      <ng-container *ngIf="even">
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img [src]="item.imageURL" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+            <h3>
+              {{item.heading}}
+            </h3>
+            <p class="fst-italic">
+              {{item.headingDecryption}}
+            </p>
+            <ul *ngFor="let data of item.checkList">
+              <li>
+                <i class="bi bi-check"></i>{{data}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="odd">
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img [src]="item.imageURL" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+            <h3>{{item.heading}}</h3>
+            <p class="fst-italic">
+              {{item.headingDecryption}}
+            </p>
+            <p>
+              {{item.checkList}}
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</section>
+<!-- End Features Section -->

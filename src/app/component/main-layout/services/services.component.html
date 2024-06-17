@@ -1,0 +1,41 @@
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-aos="fade-in">{{serviceInfo?.heading}}</h2>
+      <p data-aos="fade-in">
+        {{serviceInfo?.headingDecryption}}
+      </p>
+    </div>
+    <div class="row">
+
+      <ng-container *ngFor="let item of serviceInfo?.serviceList;let i=index">
+        <ng-container *ngIf="i<4">
+          <div class="col-md-6 d-flex" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+
+                <img [src]="item.imageURL" alt="item.imageURl" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">{{item.title}}</a></h5>
+                <p class="card-text">
+                  {{item.Decryption}}
+                </p>
+                <div class="read-more">
+                  <a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <button class="btn btn-outline-warning" routerLink="/all-service">View All Services</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->

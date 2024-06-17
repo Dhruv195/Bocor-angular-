@@ -1,0 +1,97 @@
+{
+    "heading":"TEAM",
+    "headingDecryption":"Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+    "teamList":[
+        {
+            "imageURL":"assets/img/team/team-1.jpg",
+            "title":"Walter White",
+            "post":"Chief Executive Officer"
+        },
+        {
+            "imageURL":"assets/img/team/team-2.jpg",
+            "title":"Sarah Jhinson",
+            "post":"Product Manager"
+        },  {
+            "imageURL":"assets/img/team/team-3.jpg",
+            "title":"William Anderson",
+            "post":"CTO"
+        },  {
+            "imageURL":"assets/img/team/team-4.jpg",
+            "title":"Amanda Jepson",
+            "post":"Accountant"
+        },
+        {
+            "imageURL":"assets/img/team/team-1.jpg",
+            "title":"Walter White",
+            "post":"Chief Executive Officer"
+        },
+        {
+            "imageURL":"assets/img/team/team-2.jpg",
+            "title":"Sarah Jhinson",
+            "post":"Product Manager"
+        },  {
+            "imageURL":"assets/img/team/team-3.jpg",
+            "title":"William Anderson",
+            "post":"CTO"
+        },  {
+            "imageURL":"assets/img/team/team-4.jpg",
+            "title":"Amanda Jepson",
+            "post":"Accountant"
+        },
+        {
+            "imageURL":"assets/img/team/team-1.jpg",
+            "title":"Walter White",
+            "post":"Chief Executive Officer"
+        },
+        {
+            "imageURL":"assets/img/team/team-2.jpg",
+            "title":"Sarah Jhinson",
+            "post":"Product Manager"
+        },  {
+            "imageURL":"assets/img/team/team-3.jpg",
+            "title":"William Anderson",
+            "post":"CTO"
+        },  {
+            "imageURL":"assets/img/team/team-4.jpg",
+            "title":"Amanda Jepson",
+            "post":"Accountant"
+        },
+        {
+            "imageURL":"assets/img/team/team-1.jpg",
+            "title":"Walter White",
+            "post":"Chief Executive Officer"
+        },
+        {
+            "imageURL":"assets/img/team/team-2.jpg",
+            "title":"Sarah Jhinson",
+            "post":"Product Manager"
+        },  {
+            "imageURL":"assets/img/team/team-3.jpg",
+            "title":"William Anderson",
+            "post":"CTO"
+        },  {
+            "imageURL":"assets/img/team/team-4.jpg",
+            "title":"Amanda Jepson",
+            "post":"Accountant"
+        },
+        {
+            "imageURL":"assets/img/team/team-1.jpg",
+            "title":"Walter White",
+            "post":"Chief Executive Officer"
+        },
+        {
+            "imageURL":"assets/img/team/team-2.jpg",
+            "title":"Sarah Jhinson",
+            "post":"Product Manager"
+        },  {
+            "imageURL":"assets/img/team/team-3.jpg",
+            "title":"William Anderson",
+            "post":"CTO"
+        },  {
+            "imageURL":"assets/img/team/team-4.jpg",
+            "title":"Amanda Jepson",
+            "post":"Accountant"
+        }
+    ],
+    "links":["bi bi-twitter","bi bi-facebook","bi bi-instagram","bi bi-linkedin"]
+}

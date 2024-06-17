@@ -1,0 +1,10 @@
+<div class="container-fluid">
+
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+
+    <button *ngIf="isShow" class="back-to-top d-flex align-items-center justify-content-center" (click)="gotoTop()"><i
+            class="bi bi-arrow-up-short text-warning"></i></button>
+
+</div>

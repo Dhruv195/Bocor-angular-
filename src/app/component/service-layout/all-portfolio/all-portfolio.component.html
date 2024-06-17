@@ -1,0 +1,61 @@
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-aos="fade-in">{{ portfolioInfo.heading }}</h2>
+      <p data-aos="fade-in">{{ portfolioInfo.headingDecryption }}</p>
+    </div>
+    <div class="row text-end pt-5">
+      <div class="col-12">
+        <button class="btn btn-outline-warning" routerLink="/home">
+          Go Back
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul id="portfolio-flters">
+          <ng-container *ngFor="let item of portfolioInfo.portfolioFilters">
+            <li class="" (click)="portFolioFilter(item, list)" #list>
+              {{ item }}
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up">
+      <ng-container *ngFor="let item of portfolioFilterList">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img [src]="item.imageURL" class="img-fluid" alt="" />
+            <div class="portfolio-links">
+              <a
+                href="assets/img/portfolio/portfolio-1.jpg"
+                data-gallery="portfolioGallery"
+                class="portfolio-lightbox"
+                title="App 1"
+                ><i class="bi bi-plus"></i
+              ></a>
+              <a href="portfolio-details.html" title="More Details"
+                ><i class="bi bi-link"></i
+              ></a>
+            </div>
+            <div class="portfolio-info">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.Decryption }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <button class="btn btn-outline-warning" (click)="loadMore()">
+          Load More
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Portfolio Section -->

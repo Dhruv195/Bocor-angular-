@@ -1,0 +1,26 @@
+<div class="bg-light">
+  <div *ngFor="let item of headerInfo?.menu_item" [id]="item.path.substring(1)">
+    <ng-container *ngIf="item.path === '#home'">
+      <app-banner></app-banner>
+      <app-client></app-client>
+    </ng-container>
+    <ng-container *ngIf="item.path === '#about'">
+      <app-about></app-about>
+    </ng-container>
+    <ng-container *ngIf="item.path === '#service'">
+      <app-services></app-services>
+      <app-features></app-features>
+    </ng-container>
+    <ng-container *ngIf="item.path === '#portfolio'">
+      <app-portfolio></app-portfolio>
+    </ng-container>
+    <ng-container *ngIf="item.path === '#team'">
+      <app-team></app-team>
+      <app-pricing></app-pricing>
+    </ng-container>
+    <ng-container *ngIf="item.path === '#contact'">
+      <app-faq></app-faq>
+      <app-contact></app-contact>
+    </ng-container>
+  </div>
+</div>
